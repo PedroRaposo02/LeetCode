@@ -24,9 +24,9 @@ public class Test {
             boolean result = solution.wordBreak(input.getFirst(), input.getSecond());
 
             if (result == output) {
-                System.out.println("Test passed!");
+                System.out.println("\nTest passed!");
             } else {
-                System.out.println("Test failed!");
+                System.out.println("\nTest failed!");
                 System.out.println("Input: " + input);
                 System.out.println("Expected output: " + output);
                 System.out.println("Actual output: " + result);

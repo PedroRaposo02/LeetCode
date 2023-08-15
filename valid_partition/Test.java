@@ -18,14 +18,14 @@ public class Test {
         testCases.forEach((i, o) -> {
             boolean result = s.validPartition(i);
             if (result != o) {
-                System.out.println("Test failed!");
+                System.out.println("\nTest failed!");
                 System.out.println("Input: " + i);
                 System.out.println("Expected: " + o);
                 System.out.println("Got: " + result);
                 System.exit(1);
             }
             else {
-                System.out.println("Test passed!");
+                System.out.println("\nTest passed!");
             }
         });
 

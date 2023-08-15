@@ -1,10 +1,7 @@
 package word_break;
 
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-
-// TODO THIS EXERCISE IS NOT FINISHED
 
 public class Solution {
     /*
@@ -15,18 +12,45 @@ public class Solution {
      * segmentation.
      */
 
-    public boolean wordBreak(String s, List<String> wordDict) {
-            
-        for (String word : wordDict) {
-            if (s.contains(word)) {
-                s = s.replace(word, "");
-            }
-        }
+    /*
+     * DP approach
+     */
 
-        if (s.isEmpty()) {
+    String s;
+    List<String> wordDict;
+    int[] memo;
+
+
+    public boolean wordBreak(String s, List<String> wordDict) {
+        this.s = s;
+        this.wordDict = wordDict;
+        this.memo = new int[s.length()];
+        Arrays.fill(this.memo, -1);
+        return helper(s.length() - 1);
+    }
+    
+    public boolean helper(int i) {
+        if (i < 0) {
             return true;
         }
 
+        if (memo[i] != -1) {
+            return memo[i] == 1;
+        }
+
+        for (String word : wordDict) {
+            // handle out of bounds case
+            if (i - word.length() + 1 < 0) {
+                continue;
+            }
+
+            if (s.substring(i - word.length() + 1, i + 1).equals(word) && helper(i - word.length())) {
+                memo[i] = 1;
+                return true;
+            }
+        }
+        
+        memo[i] = 0;
         return false;
     }
 }
