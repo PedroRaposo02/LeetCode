@@ -2,7 +2,6 @@ package predict_winner;
 
 public class Solution {
 
-    // TODO
     /*
      * You are given an integer array nums. Two players are playing a game with this
      * array: player 1 and player 2.
@@ -18,7 +17,58 @@ public class Solution {
      * You may assume that both players are playing optimally.
      */
 
+    /*
+     * With caching
+     */
+
+    int[][] memo;
+    int[] nums;
+
+    public boolean predictTheWinnerCaching(int[] nums) {
+        this.memo = new int[nums.length][nums.length];
+        this.nums = nums;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                this.memo[i][j] = -1;
+            }
+        }
+        return helperCaching(0, nums.length - 1) >= 0;
+    }
+
+    public int helperCaching(int left, int right) {
+        if (left == right) {
+            return nums[left];
+        }
+        if (memo[left][right] != -1) {
+            return memo[left][right];
+        }
+
+        int pickLeft = nums[left] - helperCaching(left + 1, right);
+        int pickRight = nums[right] - helperCaching(left, right - 1);
+
+        int result = Math.max(pickLeft, pickRight);
+        memo[left][right] = result;
+        return result;
+    }
+
+    /*
+     * No caching
+     */
+
     public boolean predictTheWinner(int[] nums) {
-        throw new UnsupportedOperationException();
+        this.nums = nums;
+        return helper(0, nums.length - 1) >= 0;
+    }
+
+    public int helper(int left, int right) {
+        if (left == right) {
+            return nums[left];
+        }
+
+        int pickLeft = nums[left] - helper(left + 1, right);
+        int pickRight = nums[right] - helper(left, right - 1);
+
+        int result = Math.max(pickLeft, pickRight);
+        return result;
     }
 }
