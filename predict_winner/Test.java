@@ -3,7 +3,6 @@ package predict_winner;
 import java.util.HashMap;
 import java.util.Map;
 
-import Utils.ArrayUtils;
 import Utils.Timer;
 
 public class Test {
