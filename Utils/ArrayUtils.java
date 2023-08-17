@@ -79,6 +79,15 @@ public class ArrayUtils  {
         System.out.println("]");
     }
 
+    public static <T> void printArray(T[][] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length; i++) {
+            printArray(array[i]);
+        }
+        System.out.println("]");
+    }
+
+
     /*
      * Primitive arrays : int
      */
@@ -157,6 +166,26 @@ public class ArrayUtils  {
             }
         }
         System.out.println("]");
+    }
+
+    public static boolean equals(int[][] a, int[][] b) {
+        if (a.length != b.length) {
+            return false;
+        }
+
+        for (int i = 0; i < a.length; i ++) {
+            if (a[i].length != b[i].length) {
+                return false;
+            }
+
+            for (int j = 0; j < a[i].length; j ++) {
+                if (a[i][j] != b[i][j]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
 }

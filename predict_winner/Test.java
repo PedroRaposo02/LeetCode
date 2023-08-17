@@ -3,6 +3,7 @@ package predict_winner;
 import java.util.HashMap;
 import java.util.Map;
 
+import Utils.ArrayUtils;
 import Utils.Timer;
 
 public class Test {
@@ -25,16 +26,16 @@ public class Test {
         testCases.forEach((i, o) -> {
             boolean result = s.predictTheWinner(i);
 
-            // if (result != o) {
-            //     System.out.println("Test failed");
-            //     System.out.println("Input: ");
-            //     ArrayUtils.printArray(i);
-            //     System.out.println("Expected: " + o);
-            //     System.out.println("Actual: " + result);
-            //     System.exit(1);
-            // } else {
-            //     System.out.println("Test passed");
-            // }
+            if (result != o) {
+                System.out.println("Test failed");
+                System.out.println("Input: ");
+                ArrayUtils.printArray(i);
+                System.out.println("Expected: " + o);
+                System.out.println("Actual: " + result);
+                System.exit(1);
+            } else {
+                System.out.println("Test passed");
+            }
         });
         t.end();
         System.out.println("No caching: " + t.getElapsedTime() + "ms");
@@ -47,16 +48,16 @@ public class Test {
         testCases.forEach((i, o) -> {
             boolean result = s.predictTheWinner(i);
 
-            // if (result != o) {
-            //     System.out.println("Test failed");
-            //     System.out.println("Input: ");
-            //     ArrayUtils.printArray(i);
-            //     System.out.println("Expected: " + o);
-            //     System.out.println("Actual: " + result);
-            //     System.exit(1);
-            // } else {
-            //     System.out.println("Test passed");
-            // }
+            if (result != o) {
+                System.out.println("Test failed");
+                System.out.println("Input: ");
+                ArrayUtils.printArray(i);
+                System.out.println("Expected: " + o);
+                System.out.println("Actual: " + result);
+                System.exit(1);
+            } else {
+                System.out.println("Test passed");
+            }
         });
         t.end();
         System.out.println("Cached: " + t.getElapsedTime() + "ms");
