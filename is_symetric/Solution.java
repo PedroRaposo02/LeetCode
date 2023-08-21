@@ -16,7 +16,7 @@ public class Solution {
         return mirror(root.left, root.right);
     }
 
-    public boolean mirror(TreeNode left, TreeNode right) {
+    public boolean mirror(TreeNode<Integer> left, TreeNode<Integer> right) {
         if (left == null && right == null) {
             return true;
         }
