@@ -1,7 +1,5 @@
 package maximal_network_rank;
 
-import java.util.Arrays;
-
 import Utils.ArrayUtils;
 
 public class Solution {

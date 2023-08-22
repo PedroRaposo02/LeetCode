@@ -1,6 +1,5 @@
 package repeated_substring_pattern;
 
-import Utils.ArrayUtils;
 
 public class Solution {
     /*
