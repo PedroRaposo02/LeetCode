@@ -18,7 +18,7 @@ public class Test {
         System.out.println("Running tests...");
 
         testCases.forEach((i, o) -> {
-            int result = s.minimizeMax(i.getFirst(), i.getSecond());
+            int result = s.minimizeMax(i.getFirstPrivate(), i.getSecondPrivate());
             if (result != o) {
                 System.out.println(String.format("FAIL: %s -> %d != %d", i, result, o));
             } else {

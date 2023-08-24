@@ -21,15 +21,15 @@ public class Test {
         System.out.println("Running tests...");
 
         testCases.forEach((input, output) -> {
-            boolean result = s.canPlaceFlowers(input.getFirst(), input.getSecond());
+            boolean result = s.canPlaceFlowers(input.getFirstPrivate(), input.getSecondPrivate());
 
             if (result == output) {
                 System.out.println("Test passed!");
             } else {
                 System.out.println("Test failed!");
                 System.out.println("Input: ");
-                ArrayUtils.printArray(input.getFirst());
-                System.out.println("n: " + input.getSecond());
+                ArrayUtils.printArray(input.getFirstPrivate());
+                System.out.println("n: " + input.getSecondPrivate());
                 System.out.println("Expected output: " + output);
                 System.out.println("Actual output: " + result);
             }

@@ -21,7 +21,7 @@ public class Test {
         System.out.println("Running tests...");
 
         testCases.forEach((input, output) -> {
-            boolean result = solution.wordBreak(input.getFirst(), input.getSecond());
+            boolean result = solution.wordBreak(input.getFirstPrivate(), input.getSecondPrivate());
 
             if (result == output) {
                 System.out.println("\nTest passed!");

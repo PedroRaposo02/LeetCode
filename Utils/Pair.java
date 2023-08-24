@@ -1,61 +1,65 @@
 package Utils;
 
 public class Pair<T, U> {
-    private T first;
-    private U second;
+    private T firstPrivate;
+    private U secondPrivate;
+
+    public T first;
+    public U second;
 
     public Pair(T first, U second) {
+        this.firstPrivate = first;
+        this.secondPrivate = second;
         this.first = first;
         this.second = second;
     }
 
     // Getters
-    public T getFirst() {
-        return this.first;
+    public T getFirstPrivate() {
+        return this.firstPrivate;
     }
 
     public T getKey() {
-        return this.first;
+        return this.firstPrivate;
     }
 
     public T key() {
-        return this.first;
+        return this.firstPrivate;
     }
 
     public T first() {
-        return this.first;
+        return this.firstPrivate;
     }
 
-    public U getSecond() {
-        return this.second;
+    public U getSecondPrivate() {
+        return this.secondPrivate;
     }
 
     public U getValue() {
-        return this.second;
+        return this.secondPrivate;
     }
 
     public U value() {
-        return this.second;
+        return this.secondPrivate;
     }
 
     public U second() {
-        return this.second;
+        return this.secondPrivate;
     }
 
     // Setters
-    public void setFirst(T first) {
-        this.first = first;
+    public void setFirstPrivate(T first) {
+        this.firstPrivate = first;
     }
 
-    public void setSecond(U second) {
-        this.second = second;
+    public void setSecondPrivate(U second) {
+        this.secondPrivate = second;
     }
-
 
     // Methods
     @Override
     public String toString() {
-        return "(" + this.first + ", " + this.second + ")";
+        return "(" + this.firstPrivate + ", " + this.secondPrivate + ")";
     }
 
     @Override
@@ -68,15 +72,15 @@ public class Pair<T, U> {
 
         Pair<?, ?> pair = (Pair<?, ?>) obj;
 
-        return this.first.equals(pair.getFirst()) && this.second.equals(pair.getSecond());
+        return this.firstPrivate.equals(pair.getFirstPrivate()) && this.secondPrivate.equals(pair.getSecondPrivate());
     }
 
     @Override
     public int hashCode() {
         int result = 17;
 
-        result = 31 * result + this.first.hashCode();
-        result = 31 * result + this.second.hashCode();
+        result = 31 * result + this.firstPrivate.hashCode();
+        result = 31 * result + this.secondPrivate.hashCode();
 
         return result;
     }
@@ -86,7 +90,7 @@ public class Pair<T, U> {
     }
 
     public static <T, U> Pair<T, U> of(Pair<T, U> pair) {
-        return new Pair<T, U>(pair.getFirst(), pair.getSecond());
+        return new Pair<T, U>(pair.getFirstPrivate(), pair.getSecondPrivate());
     }
 
 }

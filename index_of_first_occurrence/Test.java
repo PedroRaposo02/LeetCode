@@ -18,14 +18,13 @@ public class Test {
         System.out.println("Running tests...");
 
         testCases.forEach((input, output) -> {
-            int result = s.strStr(input.getFirst(), input.getSecond());
+            int result = s.strStr(input.getFirstPrivate(), input.getSecondPrivate());
 
-            if(result == output) {
+            if (result == output) {
                 System.out.println("Test case passed!");
-            }
-            else {
+            } else {
                 System.out.println("Test case failed:");
-                System.out.println("Input: " + input.getFirst() + ", " + input.getSecond());
+                System.out.println("Input: " + input.getFirstPrivate() + ", " + input.getSecondPrivate());
                 System.out.println("Expected output: " + output);
                 System.out.println("Actual output: " + result);
             }
